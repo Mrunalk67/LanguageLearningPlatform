@@ -11,8 +11,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
-import {FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { OktaAuth } from '@okta/okta-auth-js'
 
 
 @NgModule({
@@ -33,9 +34,19 @@ import {FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angula
     MatIconModule,
     MatCardModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: OktaAuth,
+      useValue: new OktaAuth({
+        issuer: 'https://{yourOktaDomain}/oauth2/default',
+        clientId: '{clientId}',
+      })
+    }
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
