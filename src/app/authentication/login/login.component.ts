@@ -3,7 +3,7 @@ import {FormControl, Validators, FormsModule, ReactiveFormsModule, FormGroup, Fo
 import { MatFormFieldModule} from '@angular/material/form-field';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { AuthService } from 'src/app/services/auth.service';
-
+import {Router} from '@angular/router'
 
 
 @Component({
@@ -15,7 +15,9 @@ export class LoginComponent implements OnInit{
   loginform: FormGroup;
   constructor(
     private FormBuilder: FormBuilder,
-    private authservice: AuthService
+    private authservice: AuthService,
+    private snackBar: MatSnackBar,
+    private router: Router
     
   ){}
   login(): void{
@@ -24,8 +26,16 @@ export class LoginComponent implements OnInit{
       email: formData.email,
       password: formData.password
     }
+    console.log('payload',payload)
     this.authservice.login(payload).subscribe(response =>{
       console.log('loginSubmitted',response)
+      if(response.statusCode===200){
+        this.snackBar.open("Login Successfully","OK")
+        this.router.navigateByUrl('/home');
+      }
+      else{
+        this.snackBar.open("User not found","OK")
+      }
     })
   }
 

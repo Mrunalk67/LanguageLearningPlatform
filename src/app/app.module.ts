@@ -14,7 +14,8 @@ import {MatCardModule} from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { OktaAuth } from '@okta/okta-auth-js'
-
+import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { OktaAuth } from '@okta/okta-auth-js'
     MatCardModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule,MatSnackBarModule
   ],
   providers: [
     {
