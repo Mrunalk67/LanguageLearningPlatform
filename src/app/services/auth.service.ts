@@ -11,11 +11,8 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
-  public login(payload){
-    const headers={};
-    const httpOptions={headers: new HttpHeaders(headers)};
-    return this.http.post<any>('http://localhost:8080/api/auth/login',payload,httpOptions);
+  public login(payload, options?): Observable<any> {
+    return this.http.post<any>('http://localhost:8080/api/auth/login', payload, options);
   }
-
 
 }
