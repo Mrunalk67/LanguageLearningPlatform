@@ -29,12 +29,13 @@ export class LoginComponent implements OnInit {
     console.log('payload', payload)
 
     this.authservice.login(payload, { responseType: 'text' }).subscribe(response => {
-      const authToken = response; // Response is already a string if responseType is 'text'
+      const authToken = response; 
       console.log('Token:', authToken);
       // Check if the token is not empty or null
       if (authToken) {
+        localStorage.setItem('token',authToken)
         this.snackBar.open("Login Successfully", "OK");
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/materials');
       } else {
         this.snackBar.open("User not found", "OK");
       }

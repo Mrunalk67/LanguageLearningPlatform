@@ -15,7 +15,10 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { OktaAuth } from '@okta/okta-auth-js'
 import {MatButtonModule} from '@angular/material/button';
-import {MatSnackBarModule} from '@angular/material/snack-bar'
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MaterialsComponent } from './mainpage/materials/materials.component';
+import { AssesmentsComponent } from './mainpage/assesments/assesments.component';
+import { LanguageComponent } from './mainpage/language/language.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
     LoginComponent,
     SignupComponent,
     HomeComponent,
+    MaterialsComponent,
+    AssesmentsComponent,
+    LanguageComponent,
     
   ],
   imports: [
