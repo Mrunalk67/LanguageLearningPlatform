@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       if (authToken) {
         localStorage.setItem('token',authToken)
         this.snackBar.open("Login Successfully", "OK");
-        this.router.navigateByUrl('/materials');
+        this.router.navigateByUrl('/materials/languages');
       } else {
         this.snackBar.open("User not found", "OK");
       }
