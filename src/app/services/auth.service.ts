@@ -18,4 +18,6 @@ export class AuthService {
     return this.http.post<any>('http://localhost:8080/api/auth/register', payload, options);
   }
 
+  
+
 }
