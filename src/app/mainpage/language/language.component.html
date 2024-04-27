@@ -9,7 +9,7 @@
                 <form [formGroup]="languageSelection">
                     <mat-form-field>
                         <mat-label>Select Languages you want to learn</mat-label>
-                        <mat-select [(ngModel)]="selectedValue" placeholder="Select Language" formControlName="languages">
+                        <mat-select placeholder="Select Language" formControlName="languages">
                             <!-- <mat-option *ngIf="languageList?.length> 1"></mat-option>
                             <ngx-mat-select-search placeholderLabel="Search Language" (input)="filterLanguageData($event)"></ngx-mat-select-search> -->
                             <mat-option *ngFor(language of languages; track language) [value]="languages">{{languages}}</mat-option>
