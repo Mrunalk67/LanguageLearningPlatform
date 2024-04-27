@@ -19,6 +19,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MaterialsComponent } from './mainpage/materials/materials.component';
 import { AssesmentsComponent } from './mainpage/assesments/assesments.component';
 import { LanguageComponent } from './mainpage/language/language.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { LanguageComponent } from './mainpage/language/language.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatButtonModule,MatSnackBarModule
+    MatButtonModule,MatSnackBarModule,
+    MatMenuModule,
+    MatToolbarModule
   ],
   providers: [
     {

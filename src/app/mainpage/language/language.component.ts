@@ -15,6 +15,7 @@ import { Router } from '@angular/router'
 export class LanguageComponent {
   languageSelection:FormGroup
   languages:any;
+  selectedValue: string;
 
   constructor(
     private FormBuilder: FormBuilder,
@@ -23,6 +24,9 @@ export class LanguageComponent {
     private router: Router
 
   ) { }
+  getlanguages():void{
+
+  }
 
 
   initlanguageformForm(): void {
