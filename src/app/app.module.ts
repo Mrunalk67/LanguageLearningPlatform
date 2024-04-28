@@ -16,11 +16,16 @@ import {HttpClientModule} from '@angular/common/http';
 import { OktaAuth } from '@okta/okta-auth-js'
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { MaterialsComponent } from './mainpage/materials/materials.component';
-import { AssesmentsComponent } from './mainpage/assesments/assesments.component';
 import { LanguageComponent } from './mainpage/language/language.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { EnglishmaterialsComponent } from './mainpage/englishmaterials/englishmaterials.component';
+import { HindimaterialsComponent } from './mainpage/hindimaterials/hindimaterials.component';
+import { MarathimaterialsComponent } from './mainpage/marathimaterials/marathimaterials.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { MarathiassessmentsComponent } from './mainpage/marathiassessments/marathiassessments.component';
+import { HindiassessmentsComponent } from './mainpage/hindiassessments/hindiassessments.component';
+import { EnglishassessmentsComponent } from './mainpage/englishassessments/englishassessments.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +33,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     LoginComponent,
     SignupComponent,
     HomeComponent,
-    MaterialsComponent,
-    AssesmentsComponent,
     LanguageComponent,
+    EnglishmaterialsComponent,
+    HindimaterialsComponent,
+    MarathimaterialsComponent,
+    MarathiassessmentsComponent,
+    HindiassessmentsComponent,
+    EnglishassessmentsComponent,
     
   ],
   imports: [
@@ -47,7 +56,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     HttpClientModule,
     MatButtonModule,MatSnackBarModule,
     MatMenuModule,
-    MatToolbarModule
+    MatToolbarModule,MatTabsModule
   ],
   providers: [
     {

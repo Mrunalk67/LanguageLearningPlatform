@@ -12,10 +12,11 @@
                         <mat-select [(ngModel)]="selectedValue" placeholder="Select Language" formControlName="languages">
                             <!-- <mat-option *ngIf="languageList?.length> 1"></mat-option>
                             <ngx-mat-select-search placeholderLabel="Search Language" (input)="filterLanguageData($event)"></ngx-mat-select-search> -->
-                            <mat-option *ngFor(language of languages; track language) [value]="languages">{{languages}}</mat-option>
+                            <mat-option *ngFor="let name of languages" [value]="name">{{name.name}}</mat-option>
                         </mat-select>
-                      </mat-form-field>
-                    <p> Selected Language: {{selectedValue}} </p>
+                    </mat-form-field>
+                      <p >Selected Language: {{ languageSelection.get('languages')?.value?.name }}</p>
+                      <button mat-raised-button color="primary" (click)="Submit()" [disabled]="languageSelection.invalid">Submit</button>
                 </form>
             </mat-card-content>
         </mat-card>
