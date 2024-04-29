@@ -49,6 +49,9 @@ export class LoginComponent implements OnInit {
     })
 
   }
+  signup(){
+    this.router.navigateByUrl('/signup');
+  }
 
   hide = true;
   ngOnInit(): void {

@@ -30,6 +30,9 @@
                           <mat-icon> {{hide ? 'visibility_off' : 'visibility'}} </mat-icon>
                         </button>
                     </mat-form-field>
+                    <div>
+                        <p>Already a member? <button mat-button (click)="login()">Login</button></p>
+                    </div>
                     <button mat-raised-button color="primary" (click)="signUp()" [disabled]="formValidation()">SignUp</button>
                 </form>
             </mat-card-content>

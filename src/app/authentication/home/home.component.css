@@ -1,8 +1,3 @@
-mat-card {
-    max-width: 1500px;
-    margin: 2em auto;
-    text-align: left;
-  }
   h1 {
     font-style: oblique;
     font-family: cursive;
@@ -13,4 +8,13 @@ mat-card {
     font-family: 'Courier New', Courier, monospace;
     color: gray;
     font-size: medium;
+  }
+  mat-card {
+    max-width: 400px;
+    margin: 2em auto;
+    text-align: center;
+  }
+  
+  mat-form-field {
+    display: block;
   }
