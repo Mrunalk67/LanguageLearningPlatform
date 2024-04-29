@@ -39,6 +39,9 @@ signUp(){
     });
     
   }
+  login(){
+    this.router.navigateByUrl('/login');
+  }
   formValidation(){
     return (!this.signup.valid) 
   }

@@ -40,17 +40,13 @@ export class EnglishmaterialsComponent {
   ] 
   videodata=[ 
     { 
-      name:"British Grammar", 
-      url:"https://learnenglish.britishcouncil.org/grammar/english-grammar-reference"
+      name:"Video 1", 
+      url:"https://www.youtube.com/watch?v=ldk8HYkQofQ"
     }, 
     { 
-      name:"BYJU's", 
-      url:"https://byjus.com/english/english-grammar/"
-    }, 
-    { 
-      name:"English Club", 
-      url:"https://www.englishclub.com/grammar/"
-    } 
+      name:" Video 2", 
+      url:"https://www.youtube.com/channel/UCHipXB-FIBEomAli6Px8R5g"
+    }
   ]
   constructor(
     private formBuilder: FormBuilder,

@@ -1,5 +1,6 @@
 import { Component,OnInit  } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-englishassessments',
@@ -9,39 +10,40 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class EnglishassessmentsComponent implements OnInit{
   questions = [
     {
-      text: 'What is the capital of France?',
-      options: ['Paris', 'London', 'Berlin', 'Rome'],
-      correctAnswer: 0,
-      selectedAnswer: 0
+      text: 'Choose the word that best completes the sentence:The novels plot was so __________ that I couldnt put it down',
+      options: ['complex', 'intriguingc', 'mundaned', 'ambiguous'],
+      correctAnswer: 1,
+      selectedAnswer: null
     },
     {
       text: 'Who wrote "To Kill a Mockingbird"?',
       options: ['J.K. Rowling', 'Harper Lee', 'Stephen King', 'Mark Twain'],
       correctAnswer: 1,
-      selectedAnswer: 0
+      selectedAnswer: null
     },
     {
       text: 'What is the largest planet in our solar system?',
       options: ['Earth', 'Jupiter', 'Mars', 'Venus'],
       correctAnswer: 1,
-      selectedAnswer: 0
+      selectedAnswer: null
     },
     {
       text: 'Who painted the Mona Lisa?',
       options: ['Leonardo da Vinci', 'Vincent van Gogh', 'Pablo Picasso', 'Michelangelo'],
       correctAnswer: 0,
-      selectedAnswer: 0
+      selectedAnswer: null
     },
     {
       text: 'What year did the Titanic sink?',
       options: ['1905', '1912', '1918', '1923'],
       correctAnswer: 1,
       selectedAnswer: 0
-    }
+    },
   ];
 
   constructor(
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private router: Router
   ) { }
   selectOption(questionIndex: number, optionIndex: number) {
     this.questions[questionIndex].selectedAnswer = optionIndex;
@@ -63,7 +65,9 @@ export class EnglishassessmentsComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  GotoAssesments(){
+  GotoMaterials(){
+    this.router.navigateByUrl('mainpage/englishmaterials');
+
 
   }
 
