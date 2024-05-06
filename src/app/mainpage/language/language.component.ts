@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 //import { FormGroup } from '@angular/forms';
 import { FormControl, Validators, FormsModule, ReactiveFormsModule, FormGroup, FormBuilder } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -14,10 +14,12 @@ import { MainpageService } from '../../services/mainpage.service';
   styleUrls: ['./language.component.css']
 })
 export class LanguageComponent {
+  @Input() email: any;
   languageSelection:FormGroup
   name:any;
   languages:any;
   selectedValue: string;
+  userDetails:any;
  
   constructor(
     private FormBuilder: FormBuilder,
@@ -41,21 +43,34 @@ export class LanguageComponent {
  
     })
  
- 
   }
 
   Submit(){
     const formData = this.languageSelection.getRawValue();
     const payload = {
-      languages: formData.languages,
+      email: this.authservice.email,
+      languages: formData.languages.id,
     }
     console.log('payload', payload)
 
     this.mainpageService.languages(payload).subscribe(response => {
       // Check if the token is not empty or null
-      if (response) {
+      console.log(response)
+      
+      if (response.status==200) {
         this.snackBar.open("Language Selected Successfully", "OK");
-        this.router.navigateByUrl('/mainpage/materials');
+        console.log(payload.languages.name)
+        const selectedlanguage=payload.languages.name
+        if(selectedlanguage == 'English'){
+          this.router.navigateByUrl('/mainpage/englishmaterials');
+        }
+        else if(selectedlanguage == 'Marathi'){
+          this.router.navigateByUrl('/mainpage/marathimaterials');
+        }
+        else if(selectedlanguage == 'Hindi'){
+          this.router.navigateByUrl('/mainpage/hindimaterials');
+        }
+    
       } else {
         this.snackBar.open("Error", "OK");
       }
