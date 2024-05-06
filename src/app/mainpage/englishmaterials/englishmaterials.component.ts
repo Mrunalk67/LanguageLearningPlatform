@@ -58,7 +58,9 @@ export class EnglishmaterialsComponent {
   GotoAssesments(){
     this.router.navigateByUrl('mainpage/englishassessments');
   }
-
+  logout(){
+    this.router.navigateByUrl('/');
+  }
   ngOnInit(): void {
     
   }
