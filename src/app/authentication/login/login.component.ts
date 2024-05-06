@@ -33,10 +33,13 @@ export class LoginComponent implements OnInit {
       console.log('Token:', authToken);
       // Check if the token is not empty or null
       if (authToken) {
+        const email=formData.email
         localStorage.setItem('token',authToken)
+        this.authservice.email=formData.email;
         this.snackBar.open("Login Successfully", "OK");
         this.router.navigateByUrl('/mainpage/language');
       } else {
+        console.log('error')
         this.snackBar.open("User not found", "OK");
       }
     });

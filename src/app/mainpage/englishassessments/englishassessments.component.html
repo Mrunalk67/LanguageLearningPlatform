@@ -8,11 +8,13 @@
         <div class="quiz-container">
             <h2>Multiple Choice Quiz</h2>
             <div *ngFor="let question of questions; let i = index" class="question">
+            <mat-label>{{i+1 }}. </mat-label>
             <mat-label>{{ question.text }}</mat-label>
             <div *ngFor="let option of question.options; let j = index">
                 <input type="radio" name="question{{i}}" [value]="j" (change)="selectOption(i, j)">
                 <label>{{ option }}</label>
             </div>
+            <h1> </h1>
             </div>
             <button mat-raised-button color="primary" (click)="submitQuiz()">Submit</button>
         </div>

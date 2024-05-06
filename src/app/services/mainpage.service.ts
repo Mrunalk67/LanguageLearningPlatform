@@ -18,7 +18,7 @@ export class MainpageService {
   }
 
   public languages(payload, options?): Observable<any> {
-    return this.http.post<any>('http://localhost:8080/api/update-languages-for-user/{userId}', payload, options);
+    return this.http.post<any>('http://localhost:8080/api/update-languages-for-user', payload, options);
   }
 
 }
