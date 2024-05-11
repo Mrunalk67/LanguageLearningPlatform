@@ -48,26 +48,25 @@ export class LanguageComponent {
   Submit(){
     const formData = this.languageSelection.getRawValue();
     const payload = {
-      email: this.authservice.email,
-      languages: formData.languages.id,
+      userEmail: this.authservice.email,
+      languageId: formData.languages.id,
     }
     console.log('payload', payload)
 
+
     this.mainpageService.languages(payload).subscribe(response => {
-      // Check if the token is not empty or null
       console.log(response)
-      
       if (response.status==200) {
         this.snackBar.open("Language Selected Successfully", "OK");
-        console.log(payload.languages.name)
-        const selectedlanguage=payload.languages.name
-        if(selectedlanguage == 'English'){
+        console.log(payload.languageId)
+        const selectedlanguage=payload.languageId
+        if(selectedlanguage == '1'){
           this.router.navigateByUrl('/mainpage/englishmaterials');
         }
-        else if(selectedlanguage == 'Marathi'){
+        else if(selectedlanguage == '3'){
           this.router.navigateByUrl('/mainpage/marathimaterials');
         }
-        else if(selectedlanguage == 'Hindi'){
+        else if(selectedlanguage == '2'){
           this.router.navigateByUrl('/mainpage/hindimaterials');
         }
     

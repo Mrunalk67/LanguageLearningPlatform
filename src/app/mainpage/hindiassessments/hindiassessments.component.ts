@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -42,7 +43,8 @@ export class HindiassessmentsComponent {
   ];
 
   constructor(
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private router: Router
   ) { }
   selectOption(questionIndex: number, optionIndex: number) {
     this.questions[questionIndex].selectedAnswer = optionIndex;
@@ -64,7 +66,9 @@ export class HindiassessmentsComponent {
   ngOnInit(): void {
   }
 
-  GotoAssesments(){
+  GotoMaterials(){
+    this.router.navigateByUrl('mainpage/hindimaterials');
+
 
   }
 
